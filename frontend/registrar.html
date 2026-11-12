@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrar console | MUST Registrar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <span class="brand">Registrar Console</span>
+  <nav>
+    <a href="index.html">New request</a>
+    <a href="track.html">My requests</a>
+    <a href="registrar.html" class="active">Registrar</a>
+  </nav>
+</header>
+<main class="container" style="max-width:1240px">
+  <div id="message" role="alert" hidden></div>
+  <div class="grid-reg">
+    <section class="card flush">
+      <h1>Review queue</h1>
+      <div class="toolbar">
+        <div><label class="label" for="status-filter">Filter by status</label>
+          <select id="status-filter">
+            <option value="">All statuses</option>
+            <option value="submitted">Submitted</option>
+            <option value="under_review">Under review</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+            <option value="issued">Issued</option>
+          </select></div>
+        <button id="refresh-btn" class="btn btn-secondary" type="button">Refresh</button>
+      </div>
+      <table>
+        <thead><tr><th>Student</th><th>Type</th><th>Status</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+    <section class="card" id="panel"></section>
+  </div>
+</main>
+<script src="js/api.js"></script>
+<script src="js/registrar.js"></script>
+</body>
+</html>
