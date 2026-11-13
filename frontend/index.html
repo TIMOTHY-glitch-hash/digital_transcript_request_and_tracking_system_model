@@ -1,1 +1,60 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a transcript | MUST Registrar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <span class="brand">MUST Academic Registrar</span>
+  <nav>
+    <a href="index.html" class="active">New request</a>
+    <a href="track.html">My requests</a>
+    <a href="registrar.html">Registrar</a>
+  </nav>
+</header>
+<main class="container">
+  <div class="grid-2">
+    <section class="card">
+      <h1>Request a transcript</h1>
+      <p style="margin-bottom:24px">Fill in your details. You can track the request after submitting.</p>
+      <div id="message" role="alert" hidden></div>
+      <form id="request-form" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="studentNumber">Student number</label><input type="text" id="studentNumber" name="studentNumber" placeholder="2023/BSE/045" required></div>
+          <div class="field"><label for="fullName">Full name</label><input type="text" id="fullName" name="fullName" required></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+          <div class="field"><label for="program">Programme</label><input type="text" id="program" name="program" placeholder="BSc Software Engineering" required></div>
+          <div class="field">
+            <span class="label">Student status</span>
+            <div class="radio-row">
+              <div class="choice"><input type="radio" id="finalist" name="studentStatus" value="finalist" checked><label for="finalist">Finalist</label></div>
+              <div class="choice"><input type="radio" id="continuing" name="studentStatus" value="continuing"><label for="continuing">Continuing</label></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="type">Transcript type</label>
+            <select id="type" name="type"><option value="official">Official</option><option value="unofficial">Unofficial (provisional)</option></select>
+            <div id="type-hint" class="hint"></div>
+          </div>
+          <div class="field"><label for="copies">Copies (1 to 5)</label><input type="number" id="copies" name="copies" min="1" max="5" value="1"></div>
+          <div class="field"><label for="deliveryMethod">Delivery</label><select id="deliveryMethod" name="deliveryMethod"><option value="pickup">Pickup</option><option value="email">Email</option></select></div>
+        </div>
+        <div class="actions">
+          <button type="submit" id="submit-btn" class="btn btn-primary">Submit request</button>
+          <button type="button" id="clear-btn" class="btn btn-secondary">Clear</button>
+        </div>
+      </form>
+    </section>
+    <aside class="stack">
+      <div class="card"><h2>How it works</h2><p>1. Submit the form online.<br>2. The registrar reviews it.<br>3. You are approved or told why not.<br>4. Collect or receive your transcript.</p></div>
+      <div class="card note"><h2>Who can request what</h2><p>Official transcripts are issued to finalists. Continuing students can request an unofficial (provisional) transcript.</p></div>
+    </aside>
+  </div>
+</main>
+<script src="js/api.js"></script>
+<script src="js/request.js"></script>
+</body>
+</html>
