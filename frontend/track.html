@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Track request | MUST Registrar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <span class="brand">MUST Academic Registrar</span>
+  <nav>
+    <a href="index.html">New request</a>
+    <a href="track.html" class="active">My requests</a>
+    <a href="registrar.html">Registrar</a>
+  </nav>
+</header>
+<main class="container narrow">
+  <div id="message" role="alert" hidden></div>
+  <section class="card">
+    <h2>Find your requests</h2>
+    <form id="lookup-form" class="inline-form">
+      <div class="field"><label for="studentNumber">Student number</label><input type="text" id="studentNumber" name="studentNumber" placeholder="2023/BSE/045" required></div>
+      <button type="submit" class="btn btn-primary">Find requests</button>
+    </form>
+    <div id="list" style="margin-top:20px"></div>
+  </section>
+  <div id="detail" class="stack"></div>
+</main>
+<script src="js/api.js"></script>
+<script src="js/track.js"></script>
+</body>
+</html>
