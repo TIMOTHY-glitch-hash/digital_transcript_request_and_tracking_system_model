@@ -1,5 +1,5 @@
 // New request page
-const form = document.getElementById('request-form');
+aconst form = document.getElementById('request-form');
 const messageEl = document.getElementById('message');
 const submitBtn = document.getElementById('submit-btn');
 const typeHint = document.getElementById('type-hint');
